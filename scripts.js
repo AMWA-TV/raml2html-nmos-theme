@@ -35,12 +35,14 @@ $(document).ready(function() {
           var formatter = new JSONFormatter.default(
               el.data('json'),
               3,
-              sortPropertiesBy: function(a, b) {
-               if (a === "title") { return false; }
-               if (b === "title") { return true; }
-               if (a === "description") { return false; }
-               if (b === "description") { return true; }
-               return a > b;
+              {
+                 sortPropertiesBy: function(a, b) {
+                   if (a === "title") { return false; }
+                   if (b === "title") { return true; }
+                   if (a === "description") { return false; }
+                   if (b === "description") { return true; }
+                   return a > b;
+                }
               }
              );
           // clear the container
